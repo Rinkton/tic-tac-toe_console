@@ -1,10 +1,10 @@
 This document contains simple explanation on human language, not on programming.
 
 1# Give to user select between game modes (with whom play, computer, second player?...)
-2# Create field 3x3
+2# Create grid 3x3
 3# Check, can player make a move (all cells not filled?), if yes - write that it's draw, repeat 3# and end the game (to 1#)
-4# Visualize field
-5# Give choice to player make himself move and add to field a mark
+4# Visualize grid
+5# Give choice to player make himself move and add to grid a mark
 6# If he win - Highlight winners marks, write who is winner, repeat 3# and end the game (to 1#)	
 7# To 3#
 	

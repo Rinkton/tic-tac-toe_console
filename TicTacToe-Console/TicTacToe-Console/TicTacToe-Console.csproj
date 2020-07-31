@@ -43,11 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Logic\Other\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Logic\ABC.txt" />
+    <Content Include="Logic\Analyzation\ABC.txt" />
+    <Content Include="Logic\Management\ABC.txt" />
+    <Content Include="Logic\Other\ABC.txt" />
+    <Content Include="Logic\Visualization\ABC.txt" />
+    <Content Include="Objects\ABC.txt" />
+    <Content Include="Objects\Grids\ABC.txt" />
+    <Content Include="Objects\Marks\ABC.txt" />
+    <Content Include="Objects\MenuChoices\ABC.txt" />
+    <Content Include="Objects\Players\ABC.txt" />
+    <Content Include="Objects\Stages\ABC.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,2 @@
+﻿This directory contains:
+	Files, which contains information about marks, that can be placen on the grid.

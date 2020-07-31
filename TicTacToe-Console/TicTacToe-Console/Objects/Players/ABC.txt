@@ -1,0 +1,2 @@
+﻿This directory contains:
+	Files, which contains player, that can play accordingly and have method, that have a logic of select position of move.

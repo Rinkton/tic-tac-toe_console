@@ -1,0 +1,2 @@
+﻿This directory contains:
+	Files, which contains method-executor, that do some if they is select in menu.

@@ -1,0 +1,2 @@
+﻿This directory contains:
+	Files, which keep information about different types of grids.

@@ -37,7 +37,7 @@ This document contains techie explanation on language of programmers (on object-
 		3) PlayWithComputer : IMenuChoice - play with computer choice
 	
 	3# Marks
-		1] IMark - interface of type marks on field (X or O)
+		1] IMark - interface of type marks on grid (X or O)
 		2) X : IMark - X the mark
 		3) O : IMark - O the mark
 		
@@ -47,7 +47,7 @@ This document contains techie explanation on language of programmers (on object-
 		3) SecondPlayerMove : IStage - now second player is move
 		4) WinFirst : IStage - first player (X) in won
 		5) WinSecond : IStage - second player (O) in won
-		6) Draw : IStage - is draw, no one won, because all field is fill
+		6) Draw : IStage - is draw, no one won, because all grid is fill
 		
-	5# Fields
-		1) Field - creates itself, keeper of array of cells, 3x3
+	5# Grids
+		1) Grid - creates itself, keeper of array of cells, 3x3

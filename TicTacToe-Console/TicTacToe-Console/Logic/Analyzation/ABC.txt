@@ -1,0 +1,2 @@
+﻿This directory contains:
+	Files, which analyze something and return result of analyze.
