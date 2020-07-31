@@ -1,0 +1,53 @@
+This document contains techie explanation on language of programmers (on object-oriented).
+
+## - folder of #folders
+# - folder
+) - class
+] - interface
+
+1## Logic
+	1# Other
+		1) Program - start of program
+
+	2# Management
+		1) Menu - Manage work of menu
+		2) Game - Manage work of game
+
+	3# Visualization
+		1) Menu - visualize menu (welcome text, choices)
+		2) Game - require array of cells (filled it X or O or not filled), who is move now
+
+	4# Analyzation
+		1) ExistMove - require array of cells, check existing moves yet or no
+		2) AllowableMove - require move position, check, allowable this move or no
+		3) PlayerWon - require array of cells, player, that make last move, check won player, if yes - return him
+		4) ChoiceMenu - require choice from user and return object-executor
+		5) CurrentStage - require player, that make last move, return object-what_stage_now
+		6) ChoiceMovePosition - require choice from user, return move position
+	
+2## Objects
+	1# Players
+		1] IPlayer - interface of type player, that can play
+		2) Player : IPlayer - user
+		3) Computer : IPlayer - AI
+		
+	2# MenuChoices
+		1] IMenuChoice - interface of user's choice in menu
+		2) PlayWithPlayer : IMenuChoice - play with other player choice
+		3) PlayWithComputer : IMenuChoice - play with computer choice
+	
+	3# Marks
+		1] IMark - interface of type marks on field (X or O)
+		2) X : IMark - X the mark
+		3) O : IMark - O the mark
+		
+	4# Stages
+		1] IStage - interface of stage on move of the game
+		2) FirstPlayerMove : IStage - now first player is move
+		3) SecondPlayerMove : IStage - now second player is move
+		4) WinFirst : IStage - first player (X) in won
+		5) WinSecond : IStage - second player (O) in won
+		6) Draw : IStage - is draw, no one won, because all field is fill
+		
+	5# Fields
+		1) Field - creates itself, keeper of array of cells, 3x3
