@@ -7,11 +7,11 @@ This document contains techie explanation on language of programmers (on object-
 
 1## Logic
 	1# Other
-		1) Program - start of program
+		1) Program - start of the program
 
 	2# Management
-		1) Menu - Manage work of menu
-		2) Game - Manage work of game
+		1) Menu - manage work of menu
+		2) Game - manage work of game
 
 	3# Visualization
 		1) Menu - visualize menu (welcome text, choices)
@@ -35,6 +35,7 @@ This document contains techie explanation on language of programmers (on object-
 		1] IMenuChoice - interface of user's choice in menu
 		2) PlayWithPlayer : IMenuChoice - play with other player choice
 		3) PlayWithComputer : IMenuChoice - play with computer choice
+		4) Quit : IMenuChoice - quit the game
 	
 	3# Marks
 		1] IMark - interface of type marks on grid (X or O)

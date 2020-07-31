@@ -43,7 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\Analyzation\ChoiceMenu.cs" />
+    <Compile Include="Logic\Management\Game.cs" />
+    <Compile Include="Logic\Management\Menu.cs" />
     <Compile Include="Logic\Other\Program.cs" />
+    <Compile Include="Logic\Visualization\Menu.cs" />
+    <Compile Include="Objects\MenuChoices\IMenuChoice.cs" />
+    <Compile Include="Objects\MenuChoices\PlayWithComputer.cs" />
+    <Compile Include="Objects\MenuChoices\PlayWithPlayer.cs" />
+    <Compile Include="Objects\MenuChoices\Quit.cs" />
+    <Compile Include="Objects\Players\Computer.cs" />
+    <Compile Include="Objects\Players\IPlayer.cs" />
+    <Compile Include="Objects\Players\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
