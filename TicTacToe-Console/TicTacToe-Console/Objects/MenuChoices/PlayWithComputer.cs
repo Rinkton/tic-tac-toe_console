@@ -17,7 +17,7 @@ namespace TicTacToe_Console.Objects.MenuChoices
         public void Execute()
         {
             var managGame = new Logic.Management.Game();
-            managGame.Main(new Players.Player(), new Players.Computer());
+            managGame.Main(new Players.User(new Marks.X()), new Players.Computer(new Marks.O()));
         }
     }
 }

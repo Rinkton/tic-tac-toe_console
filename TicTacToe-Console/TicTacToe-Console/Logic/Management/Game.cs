@@ -11,9 +11,14 @@ namespace TicTacToe_Console.Logic.Management
     /// </summary>
     class Game
     {
-        public void Main(Objects.Players.IPlayer firstPlayer, Objects.Players.IPlayer secondPlayer)
+        public void Main(Objects.Players.Player firstPlayer, Objects.Players.Player secondPlayer)
         {
             Console.Clear();
+
+            bool firstPlayerIsMove = true;
+
+            var analyzCurrentStage = new Analyzation.CurrentStage();
+            analyzCurrentStage.Determine(Objects.Grids.Grid.cells, firstPlayerIsMove);
         }
     }
 }

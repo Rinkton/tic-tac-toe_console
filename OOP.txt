@@ -2,8 +2,11 @@ This document contains techie explanation on language of programmers (on object-
 
 ## - folder of #folders
 # - folder
+
 ) - class
 ] - interface
+} - abstract class
+> - static class
 
 1## Logic
 	1# Other
@@ -20,16 +23,16 @@ This document contains techie explanation on language of programmers (on object-
 	4# Analyzation
 		1) ExistMove - require array of cells, check existing moves yet or no
 		2) AllowableMove - require move position, check, allowable this move or no
-		3) PlayerWon - require array of cells, player, that make last move, check won player, if yes - return him
-		4) ChoiceMenu - require choice from user and return object-executor
-		5) CurrentStage - require player, that make last move, return object-what_stage_now
+		3) PlayerWon - require array of cells, player, that make last move, check won player, if yes - return true
+		4) ChoiceMenu - require choice from player and return object-executor
+		5) CurrentStage - require player, that now must move, return object-what_stage_now
 		6) ChoiceMovePosition - require choice from user, return move position
 	
 2## Objects
 	1# Players
-		1] IPlayer - interface of type player, that can play
-		2) Player : IPlayer - user
-		3) Computer : IPlayer - AI
+		1} Player - abstract class of type player, that can play
+		2) User : Player - user
+		3) Computer : Player - AI
 		
 	2# MenuChoices
 		1] IMenuChoice - interface of user's choice in menu
@@ -38,17 +41,17 @@ This document contains techie explanation on language of programmers (on object-
 		4) Quit : IMenuChoice - quit the game
 	
 	3# Marks
-		1] IMark - interface of type marks on grid (X or O)
-		2) X : IMark - X the mark
-		3) O : IMark - O the mark
+		1} Mark - abstract class of type marks on grid (X or O)
+		2) X : Mark - X the mark
+		3) O : Mark - O the mark
 		
 	4# Stages
-		1] IStage - interface of stage on move of the game
-		2) FirstPlayerMove : IStage - now first player is move
-		3) SecondPlayerMove : IStage - now second player is move
-		4) WinFirst : IStage - first player (X) in won
-		5) WinSecond : IStage - second player (O) in won
-		6) Draw : IStage - is draw, no one won, because all grid is fill
+		1} Stage - abstract class of stage on move of the game
+		2) FirstPlayerMove : Stage - now first player is move
+		3) SecondPlayerMove : Stage - now second player is move
+		4) WinFirst : Stage - first player (X) in won
+		5) WinSecond : Stage - second player (O) in won
+		6) Draw : Stage - is draw, no one won, because all grid is fill
 		
 	5# Grids
-		1) Grid - creates itself, keeper of array of cells, 3x3
+		1> Grid - keeper of array of cells, 3x3

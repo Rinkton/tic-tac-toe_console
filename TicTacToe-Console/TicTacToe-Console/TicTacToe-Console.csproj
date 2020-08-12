@@ -44,17 +44,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\Analyzation\ChoiceMenu.cs" />
+    <Compile Include="Logic\Analyzation\CurrentStage.cs" />
+    <Compile Include="Logic\Analyzation\ExistMove.cs" />
+    <Compile Include="Logic\Analyzation\PlayerWon.cs" />
     <Compile Include="Logic\Management\Game.cs" />
     <Compile Include="Logic\Management\Menu.cs" />
     <Compile Include="Logic\Other\Program.cs" />
     <Compile Include="Logic\Visualization\Menu.cs" />
+    <Compile Include="Objects\Grids\Grid.cs" />
+    <Compile Include="Objects\Marks\Mark.cs" />
+    <Compile Include="Objects\Marks\O.cs" />
+    <Compile Include="Objects\Marks\X.cs" />
     <Compile Include="Objects\MenuChoices\IMenuChoice.cs" />
     <Compile Include="Objects\MenuChoices\PlayWithComputer.cs" />
     <Compile Include="Objects\MenuChoices\PlayWithPlayer.cs" />
     <Compile Include="Objects\MenuChoices\Quit.cs" />
     <Compile Include="Objects\Players\Computer.cs" />
-    <Compile Include="Objects\Players\IPlayer.cs" />
     <Compile Include="Objects\Players\Player.cs" />
+    <Compile Include="Objects\Players\User.cs" />
+    <Compile Include="Objects\Stages\Draw.cs" />
+    <Compile Include="Objects\Stages\FirstPlayerMove.cs" />
+    <Compile Include="Objects\Stages\SecondPlayerMove.cs" />
+    <Compile Include="Objects\Stages\Stage.cs" />
+    <Compile Include="Objects\Stages\WinFirst.cs" />
+    <Compile Include="Objects\Stages\WinSecond.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

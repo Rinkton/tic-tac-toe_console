@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 namespace TicTacToe_Console.Objects.Players
 {
     /// <summary>
-    /// User.
+    /// Abstract class of type player, that can play
     /// </summary>
-    class Player : IPlayer
+    abstract class Player
     {
+        public Marks.Mark Mark;
+
+        public Player(Marks.Mark mark)
+        {
+            Mark = mark;
+        }
     }
 }
