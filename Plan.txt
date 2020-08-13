@@ -1,10 +1,17 @@
-This document contains simple explanation on human language, not on programming.
+- Tic-tac-toe in console -
 
-1# Give to user select between game modes (with whom play, computer, second player?...)
-2# Create grid 3x3
-3# Check, can player make a move (all cells not filled?), if yes - write that it's draw, do 4# and end the game (to 1#)
-4# Visualize grid
-5# Give choice to player make himself move and add to grid a mark
-6# If he win - Highlight winners marks, write who is winner, repeat 3# and end the game (to 1#)	
-7# To 3#
+Purpose: Make tic-tac-toe in console, with 2 game modes - play user vs user and user vs computer. Menu required too. With flexible architecture.
+
+Minimum of functionality: 
+1) Menu with
+	1. Welcome text
+	2. Two of choices (play with user and play with computer)
+2) Game itself with
+	1. Define the stage
+	2. Visualize grid, metrics, marks on it and stage(whose move now, someone won, draw?)
+		1, If stage - is someone won, then highlight winner's winning marks and end the game
+		2, If stage - is draw end the game
+	3. Give choice (where his mark place?) to one of players
+	4. Update grid
+	5. And repeat all of 2) again
 	
