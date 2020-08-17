@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe_Console.Objects.Marks
+namespace TicTacToe_Console.Slave.UserErrors
 {
-    class O : Mark
+    abstract class UserError
     {
+        protected string TextOfError;
     }
 }

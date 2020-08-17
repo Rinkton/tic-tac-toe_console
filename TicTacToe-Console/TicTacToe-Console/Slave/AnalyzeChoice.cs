@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe_Console.Objects.Stages
+namespace TicTacToe_Console.Slave
 {
-    class SecondPlayerMove : Stage
+    class AnalyzeChoice
     {
-        public override void Execute()
+        public bool ItCorrectChoice(int choicesCount)
         {
-
+            return false;
         }
     }
 }

@@ -1,2 +1,0 @@
-﻿This directory contains:
-	Files, which not fit the description of other directories in Logic.

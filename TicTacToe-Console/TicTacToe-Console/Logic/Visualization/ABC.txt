@@ -1,2 +1,0 @@
-﻿This directory contains:
-	Files, which write something in console, in one word, visualize program.

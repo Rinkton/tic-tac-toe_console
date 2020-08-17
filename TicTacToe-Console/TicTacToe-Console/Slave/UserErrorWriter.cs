@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe_Console.Objects.Marks
+namespace TicTacToe_Console.Slave
 {
-    class X : Mark
+    class UserErrorWriter
     {
+        public void Write(string textOfError)
+        {
+
+        }
     }
 }

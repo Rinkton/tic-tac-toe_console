@@ -1,3 +1,0 @@
-﻿This directory contains:
-	Files, which contains information about stage of the game (First or second player win or move, draw) and method-executor, that contains logic
-	of what happening if this stage now is active.

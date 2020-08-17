@@ -1,0 +1,5 @@
+1. In Slave.MenuVisualizer be better make field "helloText" is readonly.
+2. In Slave.MenuVisualizer.VisualizeMenu() datatype of argument menuChoicesDefinition need to make not just a "string", need make it array (string[]).
+3. In Slave.MenuVisualizer word "Text" in method visualizeMenuChoicesText better replace on "Definition" and add datatype.
+4. In Slave.UserErrorWriter.Write() need change from "UserError.UserError" to "string".
+5. In Slave.MenuChoicesSetter need to add in signature of "menuChoicesDefinition" a readonly. ("menuChoicesExecutor" too)

@@ -43,49 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\Analyzation\ChoiceMenu.cs" />
-    <Compile Include="Logic\Analyzation\CurrentStage.cs" />
-    <Compile Include="Logic\Analyzation\ExistMove.cs" />
-    <Compile Include="Logic\Analyzation\PlayerWon.cs" />
-    <Compile Include="Logic\Management\Game.cs" />
-    <Compile Include="Logic\Management\Menu.cs" />
-    <Compile Include="Logic\Other\Program.cs" />
-    <Compile Include="Logic\Visualization\Menu.cs" />
-    <Compile Include="Objects\Grids\Grid.cs" />
-    <Compile Include="Objects\Marks\Mark.cs" />
-    <Compile Include="Objects\Marks\O.cs" />
-    <Compile Include="Objects\Marks\X.cs" />
-    <Compile Include="Objects\MenuChoices\IMenuChoice.cs" />
-    <Compile Include="Objects\MenuChoices\PlayWithComputer.cs" />
-    <Compile Include="Objects\MenuChoices\PlayWithPlayer.cs" />
-    <Compile Include="Objects\MenuChoices\Quit.cs" />
-    <Compile Include="Objects\Players\Computer.cs" />
-    <Compile Include="Objects\Players\Player.cs" />
-    <Compile Include="Objects\Players\User.cs" />
-    <Compile Include="Objects\Stages\Draw.cs" />
-    <Compile Include="Objects\Stages\FirstPlayerMove.cs" />
-    <Compile Include="Objects\Stages\SecondPlayerMove.cs" />
-    <Compile Include="Objects\Stages\Stage.cs" />
-    <Compile Include="Objects\Stages\WinFirst.cs" />
-    <Compile Include="Objects\Stages\WinSecond.cs" />
+    <Compile Include="Master\DataPreparatorForGame.cs" />
+    <Compile Include="Master\HandleMenuChoice.cs" />
+    <Compile Include="Master\MenuVisualizer.cs" />
+    <Compile Include="Master\UserVsComputerMenuChoice.cs" />
+    <Compile Include="Master\UserVsUserMenuChoice.cs" />
+    <Compile Include="Other\Master.cs" />
+    <Compile Include="Other\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Slave\AnalyzeChoice.cs" />
+    <Compile Include="Slave\MenuChoicesSetter.cs" />
+    <Compile Include="Slave\MenuVisualizer.cs" />
+    <Compile Include="Slave\PlayersKeeper.cs" />
+    <Compile Include="Slave\Players\Player.cs" />
+    <Compile Include="Slave\UserErrors\UserError.cs" />
+    <Compile Include="Slave\UserErrorWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="Logic\ABC.txt" />
-    <Content Include="Logic\Analyzation\ABC.txt" />
-    <Content Include="Logic\Management\ABC.txt" />
-    <Content Include="Logic\Other\ABC.txt" />
-    <Content Include="Logic\Visualization\ABC.txt" />
-    <Content Include="Objects\ABC.txt" />
-    <Content Include="Objects\Grids\ABC.txt" />
-    <Content Include="Objects\Marks\ABC.txt" />
-    <Content Include="Objects\MenuChoices\ABC.txt" />
-    <Content Include="Objects\Players\ABC.txt" />
-    <Content Include="Objects\Stages\ABC.txt" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,2 +1,0 @@
-﻿This directory contains:
-	Directories, that contains files, which control program, give her logic.

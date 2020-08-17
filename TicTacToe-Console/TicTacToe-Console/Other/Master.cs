@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe_Console.Objects.Stages
+namespace TicTacToe_Console.Other
 {
-    class WinFirst : Stage
+    interface Master
     {
-        public override void Execute()
-        {
-
-        }
+        void Main();
     }
 }
