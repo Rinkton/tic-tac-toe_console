@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Slave.UserErrors
 {
-    abstract class UserError
+    class IncorrectVariantChoice : UserError
     {
-        protected string ErrorText;
-
-        public string GetErrorText()
-        {
-            return "";
-        }
     }
 }

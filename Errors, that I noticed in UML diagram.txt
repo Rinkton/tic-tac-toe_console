@@ -2,4 +2,6 @@
 2. In Slave.MenuVisualizer.VisualizeMenu() datatype of argument menuChoicesDefinition need to make not just a "string", need make it array (string[]).
 3. In Slave.MenuVisualizer word "Text" in method visualizeMenuChoicesText better replace on "Definition" and add datatype.
 4. In Slave.UserErrorWriter.Write() need change from "UserError.UserError" to "string".
-5. In Slave.MenuChoicesSetter need to add in signature of "menuChoicesDefinition" a readonly. ("menuChoicesExecutor" too)
+5. In Slave.MenuChoicesSetter need to add in signature of "menuChoicesDefinition" a readonly ("menuChoicesExecutor" too).
+6. In Slave.AnalyzeChoice need to add "whatUserEnter" the argument.
+7. In Slave.PlayersKeeper to method "SetPlayer" need to add -s ("SetPlayers"), because we have more than 1 player.

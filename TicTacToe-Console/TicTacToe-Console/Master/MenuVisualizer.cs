@@ -10,7 +10,14 @@ namespace TicTacToe_Console.Master
     {
         public void Main()
         {
+            Slave.MenuChoicesSetter menuChoicesSetter = new Slave.MenuChoicesSetter();
+            string[] menuChoicesDefinition = menuChoicesSetter.GetMenuChoicesDefinition();
 
+            Slave.MenuVisualizer menuVisualizer = new Slave.MenuVisualizer();
+            menuVisualizer.VisualizeMenu(menuChoicesDefinition);
+
+            Other.Master handleMenuChoice = new HandleMenuChoice();
+            handleMenuChoice.Main();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace TicTacToe_Console.Slave
 {
     class AnalyzeChoice
     {
-        public bool ItCorrectChoice(int choicesCount)
+        public bool ItCorrectChoice(int choicesCount, string whatUserEnter)
         {
             return false;
         }

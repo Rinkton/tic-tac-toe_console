@@ -10,7 +10,8 @@ namespace TicTacToe_Console.Other
     {
         public static void Main()
         {
-            
+            Master menuVisualizer = new TicTacToe_Console.Master.MenuVisualizer();
+            menuVisualizer.Main();
         }
     }
 }

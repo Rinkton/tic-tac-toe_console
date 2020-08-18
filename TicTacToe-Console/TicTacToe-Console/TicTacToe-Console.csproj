@@ -55,7 +55,10 @@
     <Compile Include="Slave\MenuChoicesSetter.cs" />
     <Compile Include="Slave\MenuVisualizer.cs" />
     <Compile Include="Slave\PlayersKeeper.cs" />
+    <Compile Include="Slave\Players\Computer.cs" />
     <Compile Include="Slave\Players\Player.cs" />
+    <Compile Include="Slave\Players\User.cs" />
+    <Compile Include="Slave\UserErrors\IncorrectVariantChoice.cs" />
     <Compile Include="Slave\UserErrors\UserError.cs" />
     <Compile Include="Slave\UserErrorWriter.cs" />
   </ItemGroup>
