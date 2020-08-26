@@ -8,23 +8,31 @@ namespace TicTacToe_Console.Slave
 {
     class MenuChoicesSetter
     {
-        private readonly string[] menuChoicesDefinition;
+        private readonly string[] menuChoicesDefinition = new string[]
+            {
+                "User vs User",
+                "User vs Computer"
+            };
 
-        private readonly Other.Master[] menuChoicesExecutor;
+        private readonly Other.Master[] menuChoicesExecutor = new Other.Master[] 
+        {
+            new Master.UserVsUserMenuChoice(),
+            new Master.UserVsComputerMenuChoice()
+        };
 
         public string[] GetMenuChoicesDefinition()
         {
-            return new string[0];
+            return menuChoicesDefinition;
         }
 
         public Other.Master[] GetMenuChoicesExecutor()
         {
-            return null;
+            return menuChoicesExecutor;
         }
 
         public int GetMenuChoicesCount()
         {
-            return 0;
+            return menuChoicesDefinition.Length;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace TicTacToe_Console.Master
     {
         public void Main()
         {
-
+            Console.ReadKey();
         }
     }
 }

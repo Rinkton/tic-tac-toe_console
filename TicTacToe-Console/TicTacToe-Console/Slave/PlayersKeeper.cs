@@ -12,21 +12,20 @@ namespace TicTacToe_Console.Slave
 
         private Players.Player secondPlayer;
 
-        private bool firstPlayerIsMove;
-
         public void SetPlayers(Players.Player firstPlayer, Players.Player secondPlayer)
         {
-
+            setFirstPlayer(firstPlayer);
+            setSecondPlayer(secondPlayer);
         }
 
         private void setFirstPlayer(Players.Player firstPlayer)
         {
-
+            this.firstPlayer = firstPlayer;
         }
 
         private void setSecondPlayer(Players.Player secondPlayer)
         {
-
+            this.secondPlayer = secondPlayer;
         }
     }
 }

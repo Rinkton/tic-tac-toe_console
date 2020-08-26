@@ -8,9 +8,13 @@ namespace TicTacToe_Console.Slave
 {
     class UserErrorWriter
     {
-        public void Write(string textOfError)
-        {
+        private readonly ConsoleColor errorColor = ConsoleColor.Red;
 
+        public void Write(string errorText)
+        {
+            Console.ForegroundColor = errorColor;
+            Console.WriteLine("ERROR: " + errorText);
+            Console.ForegroundColor = ConsoleColor.Gray;
         }
     }
 }

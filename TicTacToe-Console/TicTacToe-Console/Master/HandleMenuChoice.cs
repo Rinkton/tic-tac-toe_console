@@ -16,9 +16,9 @@ namespace TicTacToe_Console.Master
             string userChoice = Console.ReadLine();
 
             Slave.AnalyzeChoice analyzeChoice = new Slave.AnalyzeChoice();
-            bool itCorrectChoice = analyzeChoice.ItCorrectChoice(menuChoicesCount, userChoice);
+            bool itCorrectChoice = analyzeChoice.ItCorrectChoice(userChoice, menuChoicesCount);
 
-            if(!itCorrectChoice)
+            if (!itCorrectChoice)
             {
                 Slave.UserErrors.UserError incorrectVariantChoice = new Slave.UserErrors.IncorrectVariantChoice();
 

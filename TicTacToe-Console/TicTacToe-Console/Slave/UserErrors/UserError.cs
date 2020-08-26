@@ -12,7 +12,7 @@ namespace TicTacToe_Console.Slave.UserErrors
 
         public string GetErrorText()
         {
-            return "";
+            return ErrorText;
         }
     }
 }
