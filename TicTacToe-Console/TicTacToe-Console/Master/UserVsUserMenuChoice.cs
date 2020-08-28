@@ -10,11 +10,11 @@ namespace TicTacToe_Console.Master
     {
         public void Main()
         {
-            Slave.PlayersKeeper playersKeeper = new Slave.PlayersKeeper();
+            Keeper.Players playersKeeper = new Keeper.Players();
             playersKeeper.SetPlayers(new Slave.Players.User(), new Slave.Players.User());
 
-            DataPreparatorForGame dataPreparatorForGame = new DataPreparatorForGame();
-            dataPreparatorForGame.Main();
+            GameVisualizer gameVisualizer = new GameVisualizer();
+            gameVisualizer.Main();
         }
     }
 }

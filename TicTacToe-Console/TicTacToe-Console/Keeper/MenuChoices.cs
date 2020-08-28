@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe_Console.Slave
+namespace TicTacToe_Console.Keeper
 {
-    class MenuChoicesSetter
+    class MenuChoices
     {
         private readonly string[] menuChoicesDefinition = new string[]
-            {
-                "User vs User",
-                "User vs Computer"
-            };
+        {
+            "User vs User",
+            "User vs Computer"
+        };
 
         private readonly Other.Master[] menuChoicesExecutor = new Other.Master[] 
         {
