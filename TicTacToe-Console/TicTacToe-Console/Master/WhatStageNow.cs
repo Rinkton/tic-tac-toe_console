@@ -6,32 +6,28 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Master
 {
-    class WhatStageNow : Other.Master
+    class WhatStageNow : IMaster
     {
         public void Main()
         {
-            Keeper.Grid gridKeeper = new Keeper.Grid();
-
             Slave.GridAnalyzer gridAnalyzer = new Slave.GridAnalyzer();
-            bool isVictory = gridAnalyzer.ItVictory(gridKeeper.GetCells());
-            bool isDraw = gridAnalyzer.ItDraw(gridKeeper.GetCells());
-
-            Keeper.Stage stageKeeper = new Keeper.Stage();
+            bool isVictory = gridAnalyzer.ItVictory(Keeper.Grid.GetCells());
+            bool isDraw = gridAnalyzer.ItDraw(Keeper.Grid.GetCells());
 
             if (isVictory)
             {
-                stageKeeper.Victory();
+                Keeper.Stage.SetVictory();
 
                 HighlightWonCells highlightWonCells = new HighlightWonCells();
                 highlightWonCells.Main();
             }  
             else if (isDraw)
             {
-                stageKeeper.Draw();
+                Keeper.Stage.SetDraw();
             } 
             else
             {
-                stageKeeper.NextPlayerMove();
+                Keeper.Stage.SetNextPlayerIsMove();
             }
 
             GameVisualizer gameVisualizer = new GameVisualizer();

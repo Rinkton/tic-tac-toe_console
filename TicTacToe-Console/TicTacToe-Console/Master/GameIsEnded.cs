@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Master
 {
-    class GameIsEnded : Other.Master
+    class GameIsEnded : IMaster
     {
         public void Main()
         {
-            Keeper.Stage stageKeeper = new Keeper.Stage();
-            Slave.Stages.Stage currentStage = stageKeeper.GetCurrentStage();
+            Slave.Stages.Stage currentStage = Keeper.Stage.GetCurrentStage();
 
             if (currentStage.IFinishGame == true)
             {
+                Console.ReadKey();
+
                 MenuVisualizer menuVisualizer = new MenuVisualizer();
                 menuVisualizer.Main();
             }

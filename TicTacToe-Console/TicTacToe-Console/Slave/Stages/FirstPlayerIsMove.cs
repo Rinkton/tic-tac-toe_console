@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Slave.Stages
 {
-    class SecondPlayerMove : Stage
+    class FirstPlayerIsMove : Stage
     {
+        public FirstPlayerIsMove()
+        {
+            IFinishGame = false;
+
+            Definition = "First player is move!";
+        }
     }
 }

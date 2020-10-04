@@ -6,33 +6,35 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Keeper
 {
-    class Grid
+    static class Grid
     {
-        private Slave.Marks.Mark[,] cells = new Slave.Marks.Mark[3,3]
-        {
-            { null, null, null },
-            { null, null, null },
-            { null, null, null }
-        };
+        private static Marks.Mark[,] currentCells;
 
-        public Slave.Marks.Mark[,] GetCells()
+        public static void Reset()
         {
-            return null;
+            Marks.Mark[,] startCells = new Marks.Mark[3, 3]
+            {
+                { new Marks.Empty(), new Marks.Empty(), new Marks.Empty() },
+                { new Marks.Empty(), new Marks.Empty(), new Marks.Empty() },
+                { new Marks.Empty(), new Marks.Empty(), new Marks.Empty() }
+            };
+
+            currentCells = startCells;
         }
 
-        public Slave.Marks.Mark GetCell(Slave.CellPosition cellPosition)
+        public static Marks.Mark[,] GetCells()
         {
-            return null;
+            return currentCells;
         }
 
-        public int GetGridSize()
+        public static void ChangeCell(CellPosition cellPosition, Marks.Mark changeOnWhat)
         {
-            return 0;
+            currentCells[cellPosition.X, cellPosition.Y] = changeOnWhat;
         }
 
-        public void ChangeCell(Slave.CellPosition cellPosition, Slave.Marks.Mark changeOnWhat)
+        public static void PaintCell(CellPosition cellPosition)
         {
-
+            currentCells[cellPosition.X, cellPosition.Y].Won();
         }
     }
 }

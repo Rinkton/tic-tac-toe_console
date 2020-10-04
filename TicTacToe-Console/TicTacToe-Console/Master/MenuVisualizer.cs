@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Master
 {
-    class MenuVisualizer : Other.Master
+    class MenuVisualizer : IMaster
     {
         public void Main()
         {
-            Keeper.MenuChoices menuChoicesKeeper = new Keeper.MenuChoices();
-            string[] menuChoicesDefinition = menuChoicesKeeper.GetMenuChoicesDefinition();
+            MenuChoices menuChoices = new MenuChoices();
+            string[] menuChoicesDefinition = menuChoices.MenuChoicesDefinition;
 
             Slave.MenuVisualizer menuVisualizer = new Slave.MenuVisualizer();
             menuVisualizer.VisualizeMenu(menuChoicesDefinition);
 
-            Other.Master menuChoiceHandler = new MenuChoiceHandler();
+            MenuChoiceHandler menuChoiceHandler = new MenuChoiceHandler();
             menuChoiceHandler.Main();
         }
     }

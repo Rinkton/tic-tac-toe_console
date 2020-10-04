@@ -6,32 +6,29 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Master
 {
-    class MenuChoiceHandler : Other.Master
+    class MenuChoiceHandler : IMaster
     {
         public void Main()
         {
-            Keeper.MenuChoices menuChoicesKeeper = new Keeper.MenuChoices();
-            int menuChoicesCount = menuChoicesKeeper.GetMenuChoicesCount();
+            MenuChoices menuChoices = new MenuChoices();
+            int menuChoicesCount = menuChoices.GetMenuChoicesCount();
 
             string userEntry = Console.ReadLine();
 
             Slave.EntryCorrectnessChecker entryCorrectnessChecker = new Slave.EntryCorrectnessChecker();
-            bool isCorrectChoiceEntry = entryCorrectnessChecker.ItCorrectVariantChoice(userEntry, menuChoicesCount);
+            UserErrors.UserError error = entryCorrectnessChecker.ItCorrectVariantChoice(userEntry, menuChoicesCount);
 
-            if (!isCorrectChoiceEntry)
+            if (error.GetType() != new UserErrors.Null().GetType())
             {
-                Slave.UserErrors.UserError incorrectVariantChoice;
-                incorrectVariantChoice = new Slave.UserErrors.IncorrectVariantChoice();
-
                 Slave.UserErrorWriter userErrorWriter = new Slave.UserErrorWriter();
-                userErrorWriter.Write(incorrectVariantChoice.GetErrorText());
+                userErrorWriter.Write(error.ErrorText);
 
                 Main();
             }
 
-            Other.Master[] menuChoicesExecutor = menuChoicesKeeper.GetMenuChoicesExecutor();
+            IMaster[] menuChoicesExecutor = menuChoices.MenuChoicesExecutor;
             Slave.EntryParser entryParser = new Slave.EntryParser();
-            Other.Master executor = menuChoicesExecutor[entryParser.ParseVariantChoice(userEntry) - 1];
+            IMaster executor = menuChoicesExecutor[entryParser.ParseVariantChoice(userEntry) - 1];
             executor.Main();
         }
     }

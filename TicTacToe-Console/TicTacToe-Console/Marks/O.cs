@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe_Console.Slave.Stages
+namespace TicTacToe_Console.Marks
 {
-    class FirstPlayerMove : Stage
+    class O : Mark
     {
+        public O()
+        {
+            Sign = 'O';
+        }
     }
 }

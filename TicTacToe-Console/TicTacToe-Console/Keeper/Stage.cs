@@ -6,33 +6,54 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Keeper
 {
-    class Stage
+    static class Stage
     {
-        private Slave.Stages.Stage currentStage;
+        private static Slave.Stages.Stage currentStage;
 
-        public Slave.Stages.Stage GetCurrentStage()
+        public static void Reset()
         {
-            return null;
+            Slave.Stages.Stage startStage = new Slave.Stages.FirstPlayerIsMove();
+
+            currentStage = startStage;
         }
 
-        public string GetCurrentStageDefinition()
+        public static Slave.Stages.Stage GetCurrentStage()
         {
-            return null;
+            return currentStage;
         }
 
-        public void Victory()
+        public static string GetCurrentStageDefinition()
         {
-
+            return currentStage.Definition;
         }
 
-        public void Draw()
+        public static void SetVictory()
         {
-
+            if (currentStage.GetType() == new Slave.Stages.FirstPlayerIsMove().GetType())
+            {
+                currentStage = new Slave.Stages.FirstPlayerWon();
+            }
+            else if (currentStage.GetType() == new Slave.Stages.SecondPlayerIsMove().GetType())
+            {
+                currentStage = new Slave.Stages.SecondPlayerWon();
+            }
         }
 
-        public void NextPlayerMove()
+        public static void SetDraw()
         {
+            currentStage = new Slave.Stages.Draw();
+        }
 
+        public static void SetNextPlayerIsMove()
+        {
+            if (currentStage.GetType() == new Slave.Stages.FirstPlayerIsMove().GetType())
+            {
+                currentStage = new Slave.Stages.SecondPlayerIsMove();
+            }
+            else if (currentStage.GetType() == new Slave.Stages.SecondPlayerIsMove().GetType())
+            {
+                currentStage = new Slave.Stages.FirstPlayerIsMove();
+            }
         }
     }
 }

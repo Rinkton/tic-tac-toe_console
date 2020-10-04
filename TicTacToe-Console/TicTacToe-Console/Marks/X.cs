@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe_Console.Slave
+namespace TicTacToe_Console.Marks
 {
-    class CellPosition
+    class X : Mark
     {
+        public X()
+        {
+            Sign = 'X';
+        }
     }
 }

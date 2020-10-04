@@ -8,5 +8,11 @@ namespace TicTacToe_Console.Slave.Stages
 {
     class SecondPlayerWon : Stage
     {
+        public SecondPlayerWon()
+        {
+            IFinishGame = true;
+
+            Definition = "Second player won!";
+        }
     }
 }

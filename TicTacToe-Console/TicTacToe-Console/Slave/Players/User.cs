@@ -8,5 +8,14 @@ namespace TicTacToe_Console.Slave.Players
 {
     class User : Player
     {
+        public User(Marks.Mark mark) : base(mark)
+        {
+            IAmComputer = false;
+        }
+
+        public override string GetCellPositionDecision()
+        {
+            return Console.ReadLine();
+        }
     }
 }

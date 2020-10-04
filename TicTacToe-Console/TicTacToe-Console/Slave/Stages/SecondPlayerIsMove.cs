@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Slave.Stages
 {
-    abstract class Stage
+    class SecondPlayerIsMove : Stage
     {
-        public bool IFinishGame { get; protected set;  }
+        public SecondPlayerIsMove()
+        {
+            IFinishGame = false;
 
-        public string Definition { get; protected set; }
+            Definition = "Second player is move!";
+        }
     }
 }

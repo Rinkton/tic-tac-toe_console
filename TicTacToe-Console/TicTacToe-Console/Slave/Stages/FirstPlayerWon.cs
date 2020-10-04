@@ -8,5 +8,11 @@ namespace TicTacToe_Console.Slave.Stages
 {
     class FirstPlayerWon : Stage
     {
+        public FirstPlayerWon()
+        {
+            IFinishGame = true;
+
+            Definition = "First player won!";
+        }
     }
 }

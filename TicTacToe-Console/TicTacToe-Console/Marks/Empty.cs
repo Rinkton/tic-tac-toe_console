@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe_Console.Slave.Players
+namespace TicTacToe_Console.Marks
 {
-    class Computer : Player
+    class Empty : Mark
     {
+        public Empty()
+        {
+            Sign = ' ';
+        }
     }
 }

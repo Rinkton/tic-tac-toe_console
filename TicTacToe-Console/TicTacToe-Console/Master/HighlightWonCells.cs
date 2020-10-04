@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Master
 {
-    class HighlightWonCells : Other.Master
+    class HighlightWonCells : IMaster
     {
         public void Main()
         {
             Slave.GridAnalyzer gridAnalyzer = new Slave.GridAnalyzer();
-            Keeper.Grid gridKeeper = new Keeper.Grid();
-            Slave.CellPosition[] wonCellsPositions = gridAnalyzer.GetWonCellsPosition(gridKeeper.GetCells());
+            CellPosition[] wonCellsPositions = gridAnalyzer.GetWonCellsPosition(Keeper.Grid.GetCells());
 
-            foreach (Slave.CellPosition position in wonCellsPositions)
+            Marks.Mark[,] gridCells = Keeper.Grid.GetCells();
+
+            foreach (CellPosition pos in wonCellsPositions)
             {
-                Slave.Marks.Mark wonMark = gridKeeper.GetCell(position);
-                wonMark.Won();
-                gridKeeper.ChangeCell(position, wonMark);
+                Keeper.Grid.PaintCell(pos);
             }
 
             GameVisualizer gameVisualizer = new GameVisualizer();

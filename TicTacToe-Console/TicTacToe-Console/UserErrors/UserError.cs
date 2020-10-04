@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe_Console.Other
+namespace TicTacToe_Console.UserErrors
 {
-    interface Master
+    abstract class UserError
     {
-        void Main();
+        public string ErrorText { get; protected set; }
     }
 }

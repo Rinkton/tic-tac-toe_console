@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe_Console.Slave.UserErrors
+namespace TicTacToe_Console.UserErrors
 {
     class IncorrectVariantChoice : UserError
     {

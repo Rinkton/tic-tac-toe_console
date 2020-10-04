@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Master
 {
-    class GameVisualizer : Other.Master
+    class GameVisualizer : IMaster
     {
         public void Main()
         {
-            Keeper.Grid gridKeeper = new Keeper.Grid();
-            Keeper.Stage stageKeeper = new Keeper.Stage();
             Slave.GameVisualizer gameVisualizer = new Slave.GameVisualizer();
-            gameVisualizer.VisualizeGame(gridKeeper.GetCells(), stageKeeper.GetCurrentStageDefinition());
+            gameVisualizer.VisualizeGame(Keeper.Grid.GetCells(), Keeper.Stage.GetCurrentStageDefinition());
 
             GameIsEnded gameIsEnded = new GameIsEnded();
             gameIsEnded.Main();

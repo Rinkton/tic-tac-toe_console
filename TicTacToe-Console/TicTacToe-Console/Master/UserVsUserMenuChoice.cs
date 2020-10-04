@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Master
 {
-    class UserVsUserMenuChoice : Other.Master
+    class UserVsUserMenuChoice : IMaster
     {
         public void Main()
         {
-            Keeper.Players playersKeeper = new Keeper.Players();
-            playersKeeper.SetPlayers(new Slave.Players.User(), new Slave.Players.User());
+            Marks.Mark x = new Marks.X();
+            Marks.Mark o = new Marks.O();
+            Keeper.Players.SetPlayers(new Slave.Players.User(x), new Slave.Players.User(o));
+
+            Keeper.Grid.Reset();
+            Keeper.Stage.Reset();
 
             GameVisualizer gameVisualizer = new GameVisualizer();
             gameVisualizer.Main();

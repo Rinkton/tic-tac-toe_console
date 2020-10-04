@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Keeper
 {
-    class Players
+    static class Players
     {
-        private Slave.Players.Player firstPlayer;
+        private static Slave.Players.Player firstPlayer;
 
-        private Slave.Players.Player secondPlayer;
+        private static Slave.Players.Player secondPlayer;
 
-        public Slave.Players.Player GetPlayer(bool returnFirstPlayer)
+        public static Slave.Players.Player GetPlayer(bool returnFirstPlayer)
         {
-            return null;
+            if (returnFirstPlayer)
+                return firstPlayer;
+            else
+                return secondPlayer;
         }
 
-        public void SetPlayers(Slave.Players.Player firstPlayer, Slave.Players.Player secondPlayer)
+        public static void SetPlayers(Slave.Players.Player firstPlayer, Slave.Players.Player secondPlayer)
         {
-            this.firstPlayer = firstPlayer;
-            this.secondPlayer = secondPlayer;
+            Players.firstPlayer = firstPlayer;
+            Players.secondPlayer = secondPlayer;
         }
     }
 }

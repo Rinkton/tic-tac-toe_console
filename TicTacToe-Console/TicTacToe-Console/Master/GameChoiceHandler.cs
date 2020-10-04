@@ -6,48 +6,48 @@ using System.Threading.Tasks;
 
 namespace TicTacToe_Console.Master
 {
-    class GameChoiceHandler : Other.Master
+    class GameChoiceHandler : IMaster
     {
         public void Main()
         {
-            Keeper.Stage stageKeeper = new Keeper.Stage();
-            Slave.Stages.Stage currentStage = stageKeeper.GetCurrentStage();
-            bool firstPlayerNowIsMove = currentStage == new Slave.Stages.FirstPlayerMove();
+            Slave.Stages.Stage currentStage = Keeper.Stage.GetCurrentStage();
+            bool firstPlayerNowIsMove = currentStage.GetType() == new Slave.Stages.FirstPlayerIsMove().GetType();
 
-            Keeper.Players playersKeeper = new Keeper.Players();
-            Slave.Players.Player playerThatNowIsMove = playersKeeper.GetPlayer(firstPlayerNowIsMove);
+            Slave.Players.Player playerThatNowIsMove = Keeper.Players.GetPlayer(firstPlayerNowIsMove);
+
+            Marks.Mark[,] gridCells = Keeper.Grid.GetCells();
 
             string playerEntry;
 
-            Keeper.Grid gridKeeper = new Keeper.Grid();
-
-            if (playerThatNowIsMove.IAmBot == true)
-                playerEntry = playerThatNowIsMove.GetCellPositionDecision(gridKeeper.GetCells());
-            else
-                playerEntry = playerThatNowIsMove.GetCellPositionDecision();
-
-            bool isCorrectCellPositionEntry;
-            int gridSize = gridKeeper.GetGridSize();
-            Slave.EntryCorrectnessChecker entryCorrectnessChecker = new Slave.EntryCorrectnessChecker();
-            isCorrectCellPositionEntry = entryCorrectnessChecker.ItCorrectCellPosition(playerEntry, gridSize);
-
-            if (!isCorrectCellPositionEntry && playerThatNowIsMove.IAmBot == false)
+            if (playerThatNowIsMove.IAmComputer == true)
             {
-                Slave.UserErrors.UserError incorrectCellPositionEntry;
-                incorrectCellPositionEntry = new Slave.UserErrors.IncorrectCellPositionEntry();
+                // Get opponent of player, that now is move.
+                Slave.Players.Player opponent = Keeper.Players.GetPlayer(!firstPlayerNowIsMove);
 
-                Slave.UserErrorWriter userErrorWriter = new Slave.UserErrorWriter();
-                userErrorWriter.Write(incorrectCellPositionEntry.GetErrorText());
-
-                Main();
+                playerEntry = playerThatNowIsMove.GetCellPositionDecision(gridCells, opponent.GameMark);
             }
-            else if (!isCorrectCellPositionEntry && playerThatNowIsMove.IAmBot == true)
+            else 
             {
+                playerEntry = playerThatNowIsMove.GetCellPositionDecision();
+            }
+
+            UserErrors.UserError error;
+            Slave.EntryCorrectnessChecker entryCorrectnessChecker = new Slave.EntryCorrectnessChecker();
+            error = entryCorrectnessChecker.ItCorrectCellPosition(playerEntry, gridCells);
+
+            if (error.GetType() != new UserErrors.Null().GetType())
+            {
+                if (playerThatNowIsMove.IAmComputer == false)
+                {
+                    Slave.UserErrorWriter userErrorWriter = new Slave.UserErrorWriter();
+                    userErrorWriter.Write(error.ErrorText);
+                }
+
                 Main();
             }
 
             Slave.EntryParser entryParser = new Slave.EntryParser();
-            gridKeeper.ChangeCell(entryParser.ParseCellPosition(playerEntry), playerThatNowIsMove.Mark);
+            Keeper.Grid.ChangeCell(entryParser.ParseCellPosition(playerEntry), playerThatNowIsMove.GameMark);
 
             WhatStageNow whatStageNow = new WhatStageNow();
             whatStageNow.Main();
